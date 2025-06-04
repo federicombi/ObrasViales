@@ -1,0 +1,31 @@
+.header_obra{
+    height: 9rem;
+    min-width: 38rem;
+}
+.foto_obra{
+    height: 120px;
+    font-weight: bolder !important;
+}
+.foto_maquina{
+    float: left;
+    margin-left:0.5rem;
+    margin-right: 0.5rem;
+    width: 60px;
+    height: 60px;
+}
+.add_km_button{
+    background-color: darkblue;
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0.2rem !important;
+}
+
+.end_allocation_button{
+    background-color: #af4545 !important; 
+    margin:0;
+    margin-left: 2rem;
+    padding: 0.2rem !important;
+}
+.end_allocation_button:hover{
+    background-color: #cf0606 !important;
+}

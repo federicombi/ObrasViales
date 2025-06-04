@@ -1,0 +1,121 @@
+body{
+    user-select: none;
+}
+h1{
+    font-size: xx-large;
+}
+.buscador{
+    background-color: rgb(193, 201, 201);
+    border:1px solid rgb(220, 252, 252);
+    border-radius: 15px 50px;
+    min-height: 20rem;
+    min-width: 20rem;
+}
+.mostrador{
+    min-width: 39rem;
+}
+.presentacion{
+    width: 45rem;
+}
+.contenedor{
+    padding: 1.5rem;
+    color: #1f2937;
+    height: 77%;
+}
+select {
+    display: block;
+    width: 12rem; 
+}
+form{
+    display: inline-block;
+}
+
+.boton{
+    background-color: #4c5caf !important;  
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0.5rem !important;
+    margin: 0;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #0e05bd !important;
+}
+
+.titulito{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-bottom:1rem;
+}
+
+.foto_obra{
+    margin-left:1rem;
+    margin-right: 1rem;
+    width: 210px;
+    min-height: 160px;
+    float: left;
+}
+.foto_maquina{
+    float: left;
+}
+.dato_destacado{
+    color:darkblue;
+    font-weight: bold;
+}
+.en_actividad{
+    color:rgb(4, 77, 4);
+    font-weight: bold;
+}
+
+.add_km_form, .allocate_form{
+    margin: 0;
+}
+
+
+.asignaciones{
+    min-width: 38rem;
+    overflow-y: auto;
+    max-height: 21rem;
+    margin:0;
+}
+.asignacion{
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin:1rem; 
+    padding: 1rem;             
+    transition: background 0.3s ease;
+}
+.asignacion_abierta{
+    background-color: rgb(224, 248, 228);
+}
+.asignacion_abierta:hover{
+    background-color: rgb(172, 207, 177);
+}
+.asignacion_cerrada{
+    background-color: rgb(227, 246, 246);
+}
+.asignacion_cerrada:hover {
+    background-color: rgb(210, 240, 240); /* efecto hover opcional */
+}
+
+.dato_asignacion{
+    font-weight: bold;
+}
+
+.swal2-select{
+    width: 80%; 
+}
+.swal2-select option{
+    font-size: 20px;
+}
+.swal2-select option:disabled{
+    color: rgb(160, 159, 159);
+}
+
+.importante{
+    color:red;
+}
