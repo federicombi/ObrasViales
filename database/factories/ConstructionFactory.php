@@ -14,7 +14,7 @@ class ConstructionFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): bool
+    public function definition(): array
     {   
         $start_date = fake()->dateTimeBetween('-2 years', '-4 weeks');
         $end_date = fake()->boolean(40) ? fake()->dateTimeBetween($start_date, 'now') : null;
