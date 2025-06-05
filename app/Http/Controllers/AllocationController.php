@@ -32,11 +32,8 @@ class AllocationController extends Controller
             'region.province',
             'allocations'
         )->find($id_construction);
-
-        dd($construction);
-
         //Aca se lleva al form
-        return view('allocation.create', compact($construction));
+        return view('allocate', compact('construction'));
     }
 
     /**

@@ -35,11 +35,13 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('allocate', function ($view) {
             $tipos_de_maquinas = MachineType::with(
-                'machine_model',
-                'machine_model.machine_brand',
-                'machine_model.machines'
+                'machine_models',
+                'machine_models.machine_brand',
+                'machine_models.machines'
                 )->orderBy('name')->get();
             $view->with('tipos_de_maquinas', $tipos_de_maquinas);
+            //// agregar constructions y machines para que cargue todo con la vista.
+
         });
     }
 }

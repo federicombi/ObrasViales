@@ -66,4 +66,3 @@ Route::get('/maquinas/prueba/{id}', [MachineController::class, 'prueba'])->witho
 
 ///Ir al form de allocation
 Route::get('/allocation/create', [AllocationController::Class, "create"])->middleware(['auth', 'verified'])->name('allocation.create');
-
