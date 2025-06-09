@@ -8,21 +8,45 @@
 
 ---
 
-## 🚧 Descripción
-
- Permite gestionar:
-- Obras por provincia y región
-- Asignar máquinas a obras y darles seguimiento
-- Control de mantenimiento de maquinaria
+## 📙 Descripción
+ Actualmente permite el sistema permite:
+- Controlar kilometraje de cada máquina, agregar kilometraje del día y visualizar cuando lleva recorrido en total y cuanto dedicó a cada obra.
+- Desasignar máquinas de obras
+- Visualizar asignaciones previas
+- 
 
 ---
 
-## ⚙️ Tecnologías utilizadas
-
+## 🚧 Tecnologías utilizadas
 - [Laravel 12](https://laravel.com)
-- PHP 8.4
+- PHP 8.2
 - MySQL
 - Blade
 - JavaScript
+
+---
+## 🛠️ Requerimientos previos:
+- PHP 8.2 o superior
+- Composer
+- MySQL
+- Servidor web (laragon, herd u otro).
+
+---
+## 🚀 Instalación y configuración
+
+1. Clonar el repositorio.
+2. Instalar **Composer** en el proyecto.
+3. Adaptar el archivo `.env` para que funcione con tu SGBD.
+4. Instalar dependencias:
+   - Abrir una consola dentro de la carpeta del proyecto y ejecutar:
+     - `npm install`
+     - `npm run build`
+5. Migrar la base de datos
+6. Ejecutar Seeders
+7. Levantar el servidor (en laragon o herd)
+8. Acceder a `http://ObrasViales.test`
+9. Para iniciar sesión:
+   - **Usuario:** `testing@email.com`  
+   - **Contraseña:** `1234`
 
 
