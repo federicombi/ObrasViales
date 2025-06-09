@@ -13,9 +13,6 @@
         <!-- Styles / Scripts -->
         <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 
-
-
-
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -42,8 +39,10 @@
         </header>
 
         <div class="welcome-container">
-            <h1 class="welcome-title">Bienvenido/a</h1>
-            <p class="welcome-subtitle">Inicia sesión <br>por favor</p>
+            <h1 class="welcome-title">Bienvenido</h1>
+            <p class="welcome-subtitle">Inicia sesión</p>
+            <img src="{{asset('images/logo.png')}}" alt="logo ObraMaq" class="logo">
+
         </div>
 
 
