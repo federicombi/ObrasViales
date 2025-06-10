@@ -20,9 +20,10 @@
 ## 🚧 Tecnologías utilizadas
 - [Laravel 12](https://laravel.com)
 - PHP 8.2
+- Composer
 - MySQL
-- Blade
-- JavaScript
+- JavaScript y Node.js
+- Css y TailwindCSS
 
 ---
 ## 🛠️ Requerimientos previos:
