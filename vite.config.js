@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/maquinas.js',
                 'resources/js/obras.js',
+                'resources/js/allocate.js',
             ],
             refresh: true,
         }),
