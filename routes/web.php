@@ -37,6 +37,8 @@ Route::get('/maquinas', function () {
 /// maquinas separada por tipo:
 Route::get('/maquinas/by_type/{id}', [MachineController::class, 'get_by_type'])->middleware(['auth', 'verified']);
 
+Route::get('/maquinas/available_by_type/{id}', [MachineController::class, 'get_available_by_type'])->middleware(['auth', 'verified']);
+
 Route::get('/maquinas/mostrar/{id}', [MachineController::Class, "show"])->middleware(['auth', 'verified'])->name('machine.show');
 
 Route::get('/maquinas/asignacion/{id}', [AllocationController::Class, "show"])->middleware(['auth', 'verified'])->name('allocation.show');
