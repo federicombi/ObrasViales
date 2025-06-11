@@ -4,7 +4,11 @@ const SELECT_MAQUINA = document.getElementById('select_maquina');
 agregarEventos();
 
 function agregarEventos(){
-    document.getElementById('select_tipo').addEventListener('change', evento_select_tipo);
+    const SELECT_TIPO = document.getElementById('select_tipo');
+    SELECT_TIPO.addEventListener('change', event=>{
+            const tipoId = SELECT_TIPO.value;
+            evento_select_tipo('/maquinas/by_type/'+tipoId);
+        });
     const end_allocation_button =document.querySelector('.end_allocation_button');
     if(end_allocation_button){
         end_allocation_button.addEventListener('click', event=>{
@@ -21,34 +25,6 @@ function agregarEventos(){
             add_km(id_machine, "machine", id_destino);
         });
     }
-}
-
-async function evento_select_tipo(){
-    const tipoId = this.value;
-    SELECT_MAQUINA.disabled = true;
-    SELECT_MAQUINA.innerHTML = '<option selected disabled>Cargando...</option>';
-    let 
-        cargaron_las_maquinas = true,
-        link = '/maquinas/by_type/'+tipoId;
-
-    const 
-        maquinas = await fetchear(link).catch(error => {error_al_cargar_opciones_de_select(error); cargaron_las_maquinas = false;});
-
-    if(cargaron_las_maquinas){
-        agregar_maquinas_a_Select(maquinas);
-    }
-
-}
-
-function agregar_maquinas_a_Select(maquinas){
-    SELECT_MAQUINA.innerHTML = '<option selected disabled>Elija una máquina</option>';
-    maquinas.forEach(maquina => {
-        const option = document.createElement('option');
-        option.value = maquina.id;
-        option.textContent = maquina.series; 
-        SELECT_MAQUINA.appendChild(option);
-    });
-    SELECT_MAQUINA.disabled = false;
 }
 
 function error_al_cargar_opciones_de_select(error){

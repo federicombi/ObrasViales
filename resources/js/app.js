@@ -209,3 +209,27 @@ window.agregar_motivos = async function(ruta){
     }
 }
 
+window.evento_select_tipo = async function(link){
+    const SELECT_MAQUINA = document.getElementById('select_maquina');
+    SELECT_MAQUINA.disabled = true;
+    SELECT_MAQUINA.innerHTML = '<option selected disabled>Cargando...</option>';
+    let 
+        cargaron_las_maquinas = true;
+    const 
+        maquinas = await fetchear(link).catch(error => {error_al_cargar_opciones_de_select(error); cargaron_las_maquinas = false;});
+    if(cargaron_las_maquinas){
+        agregar_maquinas_a_Select(maquinas);
+    }
+}
+
+function agregar_maquinas_a_Select(maquinas){
+    const SELECT_MAQUINA = document.getElementById('select_maquina');
+    SELECT_MAQUINA.innerHTML = '<option selected disabled>Elija una máquina</option>';
+    maquinas.forEach(maquina => {
+        const option = document.createElement('option');
+        option.value = maquina.id;
+        option.textContent = maquina.series; 
+        SELECT_MAQUINA.appendChild(option);
+    });
+    SELECT_MAQUINA.disabled = false;
+}
