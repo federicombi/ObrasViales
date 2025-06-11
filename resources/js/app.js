@@ -11,7 +11,6 @@ window.fetchear = async function (link){
     try {
         const response = await fetch(link);
         const data = await response.json();
-        console.log("data fetcheada ok");
         return data;
     } catch (error) {
         console.error('Error al cargar:', error);
