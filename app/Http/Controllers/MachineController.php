@@ -108,5 +108,17 @@ class MachineController extends Controller
         return response()->json($maquinas);
     }
 
+    public function get_available_by_type($id)
+    {
+        $maquinas = Machine::with("machine_model.machine_type")
+        ->where('machine_status_id', 1)
+        ->whereHas('machine_model.machine_type', function ($query) use ($id) {
+            $query->where('id', $id);
+        })
+        ->get();
+
+        return response()->json($maquinas);
+    }
+
 
 }
