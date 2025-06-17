@@ -13,7 +13,7 @@
                 <div class="p-2 text-gray-900">
                     
                     <div id="container" class="container flex items-center justify-center flex-col gap-4">
-                        <form method="POST" action="" >
+                        <form method="POST" action="" id="allocate_form" class="allocate_form" >
                             <h1 class="titulito">Asignar a obra:</h1>
                             <select id="select_obra" name="select_obra">
                                 <option selected disabled> Obra... </option>

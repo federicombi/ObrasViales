@@ -24,7 +24,10 @@ async function confirmar(){
         allowOutsideClick:false,
         title: "¿Está seguro?",
         icon: "warning",
-        html:`<b>Se asignará la `+tipo_maquina+` `+maquina_seleccionada+`a la obra en `+obra_seleccionada+`</b><h1><br>
+        html:`<b>Se asignará la <br>
+        <spam class="important">`+tipo_maquina+` `+maquina_seleccionada+`</spam> <br>
+        a la obra en <br>
+        <spam class="important">`+obra_seleccionada+`</spam> </b><h1><br>
         `,
         showCancelButton: true,
         cancelButtonColor: "#d33",
@@ -32,10 +35,22 @@ async function confirmar(){
         cancelButtonText: "Cancelar"
     });
     if (result.isConfirmed) {
-        console.log("se confirmo");
+        const datos = {
+            "construction_id": select_obra.value,
+            "machine_id": select_maquina.value,
+        };
+        const continuar = await agregar_inputs_a_form(datos, "allocate_form", "obras", select_obra.value);
+        const listo = await datos_guardados("Se guardó el kilometraje de hoy.");
+        ///// CAMBIAR ESTA PARTE DESDE EL IF PARA QUE GUARDE LA ALLOCATION NUEVA.
+
+        if(continuar && listo){
+            const add_km_form = document.getElementById("add_km_form");
+            add_km_form.submit();
+        }
+
     }else{
-        console.log("NOPE");
-        return;
+    console.log("NOPE");
+    return;
     }
 
 

@@ -77,7 +77,6 @@ window.esta_seguro_trail = async function (id_machine, horas_de_uso, km, destino
             cancelButtonText: "Cancelar"
             });
         if (result.isConfirmed) {
-            // ACA TIENE QUE GUARDAR LA INFORMACIÓN
             const datos = {
                 "km":km,
                 "date": new Date().toISOString(),
@@ -110,12 +109,14 @@ window.agregar_inputs_a_form = async function (datos, id_formulario, destino, id
         input.value = valor;
         formulario.appendChild(input);
     });
+    
     const input_destino = document.createElement('input');
     input_destino.type = 'hidden';
     input_destino.id = "input_destino";
     input_destino.name = "destino";
     input_destino.value = destino;
     formulario.appendChild(input_destino);
+
     const input_id_destino = document.createElement('input');
     input_id_destino.type = 'hidden';
     input_id_destino.id = "input_id_destino";
